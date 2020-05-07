@@ -32,10 +32,26 @@ header {
         transform: translate(-50%, -50%);
         width: 80%;
         height: 80%;
+        transition: 1s all;
         background: url('../../img/icon/light-icon.png') center center/cover no-repeat;
     }
-    &__off {
+    &::before {
+        content: 'Black and white';
+        opacity: 0;
+        width: 150px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: 1s all;
+    }
+    &:hover::before {
+        opacity: 1;
+        left: 70px;
+    }
+    &_off {
         box-shadow: inset 2px 2px 20px white;
+        transition: 1s all;
         &:hover {
             box-shadow: inset 2px 2px 20px black;
         }
@@ -47,6 +63,7 @@ header {
             transform: translate(-50%, -50%);
             width: 80%;
             height: 80%;
+            transition: 1s all;
             background: url('../../img/icon/on-icon.png') center center/cover no-repeat;
         }
     }
@@ -70,6 +87,7 @@ nav {
     background-color: $main-color;
     box-shadow: inset 2px 2px 20px black;
     transition: 1s all;
+    z-index: 7;
     &:hover {
         box-shadow: inset 2px 2px 20px white;
     }
@@ -82,5 +100,151 @@ nav {
         width: 80%;
         height: 80%;
         background: url('../../img/icon/menu-icon.png') center center/cover no-repeat;
+    }
+    &::before {
+        content: 'Menu';
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: 1s all;
+    }
+    &:hover::before {
+        opacity: 1;
+        left: -70px;
+    }
+    &_white {
+        box-shadow: inset 2px 2px 20px white;
+        &:hover {
+            box-shadow: inset 2px 2px 20px black;
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+        list-style-type: none;
+        z-index: 6;
+        transition: 1s all;
+        &_active {
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+        }
+        &_item {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: $main-color;
+            box-shadow: inset 2px 2px 20px black;
+            transition: 1s all;
+            z-index: 6;
+            &:hover {
+                box-shadow: inset 2px 2px 20px white;
+            }
+            &_active {
+                opacity: 1;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+                &:nth-child(1) {
+                    &:before {
+                        content: 'Главная';
+                        opacity: 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        transition: 1s all;
+                    }
+                    &:hover::before {
+                        opacity: 1;
+                        left: -70px;
+                    }
+                }
+                &:nth-child(2) {
+                    margin-top: 70px;
+                    &:before {
+                        content: 'Блог';
+                        opacity: 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        transition: 1s all;
+                    }
+                    &:hover::before {
+                        opacity: 1;
+                        left: -70px;
+                    }
+                }
+                &:nth-child(3) {
+                    margin-top: 130px;
+                    &:before {
+                        content: 'Шаблоны';
+                        opacity: 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        transition: 1s all;
+                    }
+                    &:hover::before {
+                        opacity: 1;
+                        left: -75px;
+                    }
+                }
+                &:nth-child(4) {
+                    margin-top: 190px;
+                    transition: 1s all;
+                    &:before {
+                        content: 'Контакты';
+                        opacity: 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        transition: 1s all;
+                    }
+                    &:hover::before {
+                        opacity: 1;
+                        left: -75px;
+                    }
+                }
+            }
+            &_white {
+                box-shadow: inset 2px 2px 20px white;
+                &:hover {
+                    box-shadow: inset 2px 2px 20px black;
+                }
+            }
+            &_link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                z-index: 6;
+                transition: 1s all;
+                img {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
     }
 }
