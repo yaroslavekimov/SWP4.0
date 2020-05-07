@@ -1,0 +1,86 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 7;
+}
+.black-on {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);;
+    left: 5%;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $main-color;
+    box-shadow: inset 2px 2px 20px black;
+    transition: 1s all;
+    &:hover {
+        box-shadow: inset 2px 2px 20px white;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        background: url('../../img/icon/light-icon.png') center center/cover no-repeat;
+    }
+    &__off {
+        box-shadow: inset 2px 2px 20px white;
+        &:hover {
+            box-shadow: inset 2px 2px 20px black;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: url('../../img/icon/on-icon.png') center center/cover no-repeat;
+        }
+    }
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);;
+    right: 5%;
+    width: 60px;
+    height: 60px;
+}
+.menu {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $main-color;
+    box-shadow: inset 2px 2px 20px black;
+    transition: 1s all;
+    &:hover {
+        box-shadow: inset 2px 2px 20px white;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        background: url('../../img/icon/menu-icon.png') center center/cover no-repeat;
+    }
+}

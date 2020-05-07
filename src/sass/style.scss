@@ -1,0 +1,16 @@
+@import 'base/_mixins';
+@import 'base/_variables';
+@import 'libs/_bootstrap.min';
+@import 'libs/_font';
+@import 'libs/_slick';
+@import 'libs/_animate';
+
+* {
+    position: relative;
+    font-family: 'Roboto';
+}
+	
+@import 'blocks/_back-fix';
+@import 'blocks/_header';
+     
+// @import 'media/_media'
