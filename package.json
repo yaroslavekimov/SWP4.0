@@ -1,0 +1,49 @@
+{
+  "name": "SWP",
+  "version": "4.0",
+  "description": "my project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaroslav Ekimov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "es6-promise": "^4.2.8",
+    "formdata-polyfill": "^3.0.19",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "nodelist-foreach-polyfill": "^1.2.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaroslavekimov/SWP4.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yaroslavekimov/SWP4.0/issues"
+  },
+  "homepage": "https://github.com/yaroslavekimov/SWP4.0#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "browser-sync": "^2.26.7",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0"
+  }
+}
