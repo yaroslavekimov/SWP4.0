@@ -1,0 +1,25 @@
+.cookie {
+    min-height: 70px;
+    position: fixed;
+    padding: 15px;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    transition: 1s all;
+    &_active {  
+        bottom: 40px;
+    }
+    &__modal {
+        font-size: 12px;
+        text-align: right;
+    }
+    &__button {
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        outline: none;
+    }
+}     

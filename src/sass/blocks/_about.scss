@@ -1,6 +1,6 @@
-.language {
-    min-height: 500px;
-    margin-top: 50px;
+.about {
+    min-height: 400px;
+    margin-top: 150px;
     padding: 60px;
     background-color: $section-color-black;
     &::before {
@@ -22,9 +22,10 @@
         background: linear-gradient(2deg,$section-color-black-before 49%,$section-color-black 50%);
     }
     &__title {
+        margin-bottom: 60px;
         width: 100%;
         font-family: 'Facon regular';
-        font-size: 100px;
+        font-size: 80px;
         color: $main-color;
         text-align: center;
         text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
@@ -50,15 +51,12 @@
             background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
         }
     }
-    &__general_title {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 50px;
-    }
     &__description {
         font-size: 22px;
         text-align: center;
-        margin-top: 30px;
+        span{
+            font-size: 26px;
+        }
         &::before {
             content: "";
             display: block;

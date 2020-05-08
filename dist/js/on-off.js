@@ -4,10 +4,12 @@
         fix = document.querySelector('.back-fix'),
         menuWhite = document.querySelector('.menu'),
         menuListItem = document.querySelectorAll('.menu__list_item'),
-        section = document.querySelectorAll('.language'),
+        sectionLanguage = document.querySelectorAll('.language'),
+        sectionAbout = document.querySelectorAll('.about'),
+        sectionServices = document.querySelectorAll('.services'),
         footer = document.querySelector('.footer'),
         links = document.querySelectorAll('a'),
-        // privacy = document.querySelector('.privacy'),
+        privacy = document.querySelector('.privacy'),
         body = document.querySelector('body');
 
     // function locStor() {
@@ -33,10 +35,17 @@
     }
 
     function toggleSection() {
-        let i;
+        
+        for (let i = 0; i < sectionLanguage.length; i++) {
+            sectionLanguage[i].classList.toggle('language_white');
+        }
 
-        for (i = 0; i < section.length; i++) {
-            section[i].classList.toggle('language_white');
+        for (let i = 0; i < sectionAbout.length; i++) {
+            sectionAbout[i].classList.toggle('about_white');
+        }
+
+        for (let i = 0; i < sectionServices.length; i++) {
+            sectionServices[i].classList.toggle('services_white');
         }
     }
 
@@ -55,12 +64,14 @@
                 links[i].style.color = '#000000';
             }
         }
+        if (privacy) {
+            privacy.classList.toggle('privacy_white');
+        }
 
         on.classList.toggle('black-on_off');
         fix.classList.toggle('back-fix_white');
         menuWhite.classList.toggle('menu_white');
         footer.classList.toggle('footer_white');
-        // privacy.classList.toggle('privacy_white');
         toggleItemWhite();
         toggleSection();
     });
