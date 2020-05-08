@@ -1,0 +1,86 @@
+.language {
+    min-height: 300px;
+    margin-top: 50px;
+    padding: 60px;
+    background-color: $section-color-black;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 15%;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        background: linear-gradient(2deg,$section-color-black 49%,$section-color-black-before 50%);
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 15%;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        background: linear-gradient(2deg,$section-color-black-before 49%,$section-color-black 50%);
+    }
+    &__title {
+        width: 100%;
+        font-family: 'Facon regular';
+        font-size: 100px;
+        color: $main-color;
+        text-align: center;
+        text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
+    }
+    &_white {
+        background-color: $section-color-white;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 15%;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
+        }
+        &::after {
+            content: '';
+            width: 100%;
+            height: 15%;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
+        }
+    }
+    &__general_title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    &__description {
+        margin-top: 30px;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $main-color;
+            clip-path: polygon(75% 0,70% 6%,98% 6%,98% 65%,100% 43%,100% 0);
+            left: -45px;
+            bottom: -35px;
+            transform: rotate(180deg);
+            z-index: 1;
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $main-color;
+            clip-path: polygon(75% 0,70% 6%,98% 6%,98% 65%,100% 43%,100% 0);
+            left: 20px;
+            bottom: 30px;
+            z-index: 1;
+        }
+    }
+}

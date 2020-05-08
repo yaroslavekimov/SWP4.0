@@ -1,0 +1,57 @@
+.about-me {
+    min-height: 300px;
+    margin-top: 50px;
+    padding: 60px;
+    transition: 1s all;
+    &__title {
+        width: 100%;
+        margin-top: 50px;
+        font-family: 'Facon regular';
+        font-size: 100px;
+        color: $main-color;
+        text-align: center;
+        text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
+    }
+    &__img {
+        display: block;
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 2px solid #000000;
+        border-radius: 100%;
+        box-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;;
+    }
+    &__for-me {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 25px;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+    }
+    &__item {
+        margin-top: 10px;
+        text-align: center;
+    }
+    &__link {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 60px;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        color: $main-color;
+        text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
+        transition: 1s all;
+        &:hover {
+            text-decoration: none;
+            background-color: $main-color;
+            color: #000000;
+        }
+    }
+}
