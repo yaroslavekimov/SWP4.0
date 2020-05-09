@@ -7,7 +7,9 @@
         sectionLanguage = document.querySelectorAll('.language'),
         sectionAbout = document.querySelectorAll('.about'),
         sectionServices = document.querySelectorAll('.services'),
+        sectionFeedForm = document.querySelectorAll('.feedform'),
         footer = document.querySelector('.footer'),
+        button = document.querySelectorAll('.feedform__button'),
         links = document.querySelectorAll('a'),
         privacy = document.querySelector('.privacy'),
         body = document.querySelector('body');
@@ -21,6 +23,9 @@
 
         for (let i = 0; i < links.length; i++) {
             links[i].style.color = '#ffffff';
+        }
+        for (let i = 0; i < button.length; i++) {
+            button[i].style.color = '#ffffff';
         }
     }
 
@@ -47,6 +52,9 @@
         for (let i = 0; i < sectionServices.length; i++) {
             sectionServices[i].classList.toggle('services_white');
         }
+        for (let i = 0; i < sectionFeedForm.length; i++) {
+            sectionFeedForm[i].classList.toggle('feedform_white');
+        }
     }
 
     on.addEventListener('click', function() {
@@ -57,11 +65,17 @@
             for (let i = 0; i < links.length; i++) {
                 links[i].style.color = '#ffffff';
             }
+            for (let i = 0; i < button.length; i++) {
+                button[i].style.color = '#ffffff';
+            }
         } else {
             body.style.color = '#000000';
 
             for (let i = 0; i < links.length; i++) {
                 links[i].style.color = '#000000';
+            }
+            for (let i = 0; i < button.length; i++) {
+                button[i].style.color = '#000000';
             }
         }
         if (privacy) {

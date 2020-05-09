@@ -51,25 +51,51 @@
     </div>
 </section>
 <section class="separator">
-
+    <div class="container">
+        <h2 class="skills">Skills</h2>
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h3 class="skills__title">HTML</h3>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h3 class="skills__title">CSS</h3>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h3 class="skills__title">JavaScript</h3>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="services">
     <div class="container">
         <div class="row">
             <div class="col-xl-6 offset-xl-3">
-                <h2 class="services__title">Что я могу</h2>
+                <h2 class="services__title">Чем я занимаюсь?</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-6">
                 <img src="img/icon/comp-icon.png" alt="" class="services__img">
-                <p class="services__description">Вёрстка сайта (FrontEnd) — Это разметка веб-страницы, а также расположение текста, заголовков и изображений в интернете при помощи таких языков как HTML, CSS и JavaScript. 
+                <p class="services__description">Вёрстка сайтов — это разметка веб-страницы, а также расположение текста, заголовков и изображений в интернете при помощи таких языков как HTML, CSS и JavaScript. 
                 <br>
                 Сайт-визитка – это сайт основной целью которого является предоставить основную информацию об организации (Виды услуг (товаров), Цены, Контактная информация, График работы), конкретном человеке, а также это может быть например портфолио.</p>
             </div>
             <div class="col-xl-6">
                 <img src="img/icon/comp-icon.png" alt="landing page" class="services__img">
-                <p class="services__description">Целевая страница (англ. landing page, также «посадочная страница») — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Такая веб-страница обычно содержит информацию о товаре или услуге.
+                <p class="services__description">Landing page «посадочная страница» — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Такая веб-страница обычно содержит информацию о товаре или услуге.
 
                 Такая веб-страница призванна побудить потенциального клиента к действию по приобретению товара, подписке на курсы, заполнению формы с контактами.</p>
             </div>
@@ -98,21 +124,50 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-6 offset-xl-3">
-                <h1 class="feedform__title">Форма обратной связи</h1>
+                <h2 class="feedform__title">Форма обратной связи</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-10 offset-xl-1">
                 <form id="wdh_form" action="#" class="feedform__general">
-                    <label>Введите ваше имя:</label>
-                    <input name="uname" required placeholder="name" type="text">
-                    <label>Введите ваш e-mail:</label>
-                    <input name="uemail" required placeholder="eeee@mail.ru" type="email">
-                    <label>Введите ваше сообщение:</label>
-                    <textarea name="umessage" required rows="5" maxlength="300" placeholder="..." ></textarea>
-                    <div class="g-recaptcha" data-sitekey="6Lc4oOgUAAAAALk4SLd6i-lh-1KzAqFcrZ264f0v"></div>
-                    <button type="submit" class="feedform__button">ОТПРАВИТЬ</button>
-                    <div id="wdh_result_form"></div>
+                    <div class="row">
+                        <div class="col-xl-5 offset-xl-1 feedform__wrapper">
+                            <label>Введите ваше имя:</label>
+                            <input id="uname" name="uname" required placeholder="name" type="text">
+                            <span class="error error__name"></span>
+                        </div>
+                        <div class="col-xl-5 feedform__wrapper">
+                            <label>Введите ваш e-mail:</label>
+                            <input id="uemail" name="uemail" required placeholder="eeee@mail.ru" type="email">
+                            <span class="error error__email"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1 feedform__wrapper">
+                            <label>Введите ваше сообщение:</label>
+                            <textarea id="umessage" name="umessage" required rows="5" maxlength="300" placeholder="..." ></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 offset-xl-1">
+                            <div class="col feedform__wrapper_checkbox">
+                                <input id="checkbox" type="checkbox">
+                                <label>Нажимая кнопку "отправить" вы даете согласие на обработку введенных      персональных данных и соглашаетесь с
+                                <a href="privacy-policy.html" target="_blank" class="cookie__privacy-policy">политикой конфиденциальности</a></label>
+                            </div>
+                        </div>
+                        <div class="col-ml-3">
+                            <div class="g-recaptcha" data-sitekey="6Lc4oOgUAAAAALk4SLd6i-lh-1KzAqFcrZ264f0v"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-2 offset-xl-5">
+                            <button id="submit" type="submit" class="feedform__button">ОТПРАВИТЬ</button>
+                        </div>
+                        <div class="col-xl-4 offset-xl-4 ">
+                            <div id="wdh_result_form"></div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -158,7 +213,8 @@
 <script src="js/menu.js"></script>
 <script src="js/scroll.js"></script>
 <script src="js/cookie.js"></script>
-<script src='form.js'></script>
+<script src='js/form.js'></script>
+<script src="js/skills.js"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

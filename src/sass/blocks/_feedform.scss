@@ -1,0 +1,125 @@
+.feedform {
+    min-height: 500px;
+    margin-top: 50px;
+    padding: 60px;
+    background-color: $section-color-black;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 9%;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        background: linear-gradient(2deg,$section-color-black 49%,$section-color-black-before 50%);
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 9%;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        background: linear-gradient(2deg,$section-color-black-before 49%,$section-color-black 50%);
+    }
+    &_white {
+        background-color: $section-color-white;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 9%;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
+        }
+        &::after {
+            content: '';
+            width: 100%;
+            height: 9%;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
+        }
+    }
+    &__title {
+        text-align: center;
+    }
+    &__wrapper {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        &_checkbox {
+            margin-top: 30px;
+            align-items: flex-start;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            label {
+                margin-left: 15px;
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+    input {
+        padding: 0 20px;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+    }
+    textarea {
+        padding: 0 20px;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+    }
+    &__button {
+        margin-top: 30px;
+        width: 100%;
+        height: 50%;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        background-color: transparent;
+        transition: 1s all;
+        &:hover {
+            background-color: $main-color;
+        }
+        &_stop {
+            transition: 1s all;
+            &:hover {
+                background-color: transparent;
+                &:hover::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -30px;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../../img/icon/stop-icon.png) center center/cover no-repeat;
+                }
+            }
+        }
+    }
+}
+.error {
+    margin-top: 10px;
+    font-size: 12px;
+    color: red;
+    transition: 1s all;
+}
+.g-recaptcha {
+    margin-top: 30px;
+}
+#checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#wdh_result_form {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
+    transition: 1s all;
+}
