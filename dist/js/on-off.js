@@ -8,12 +8,16 @@
         sectionAbout = document.querySelectorAll('.about'),
         sectionServices = document.querySelectorAll('.services'),
         sectionFeedForm = document.querySelectorAll('.feedform'),
+        blog = document.querySelector('.blog'),
+        categoryTitle = document.querySelector('.card__subtitle'),
+        cardList = document.querySelector('.card__list'),
         footer = document.querySelector('.footer'),
         button = document.querySelectorAll('.feedform__button'),
+        card = document.querySelectorAll('.card'),
         links = document.querySelectorAll('a'),
         privacy = document.querySelector('.privacy'),
         body = document.querySelector('body');
-
+        
     // function locStor() {
 
     // }
@@ -55,6 +59,9 @@
         for (let i = 0; i < sectionFeedForm.length; i++) {
             sectionFeedForm[i].classList.toggle('feedform_white');
         }
+        for (let i = 0; i < card.length; i++) {
+            card[i].classList.toggle('card_white');
+        }
     }
 
     on.addEventListener('click', function() {
@@ -80,6 +87,15 @@
         }
         if (privacy) {
             privacy.classList.toggle('privacy_white');
+        }
+        if (blog) {
+            blog.classList.toggle('blog_white');
+        }
+        if (categoryTitle) {
+            categoryTitle.classList.toggle('card__subtitle_white');
+        }
+        if (cardList) {
+            cardList.classList.toggle('card__list_white');
         }
 
         on.classList.toggle('black-on_off');
