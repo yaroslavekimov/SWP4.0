@@ -141,11 +141,12 @@
         }
     }
     &__item {
-        margin: 10px 0px;
+        padding: 10px 0px;
+        &:hover {
+            background-color: $main-color;
+        }
     }
     &__link {
-        &:hover {
-            text-decoration: none;
-        }
+        cursor: pointer;
     }
 }
