@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+
+<div class="preloader">
+    <div class="loading">loading</div>
+</div>
+
 <section class="back-fix"></section>
 
 <header>
@@ -48,42 +53,42 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9">
-                <div class="card" data="Первая" style="width: 15rem;">
+                <div class="card show" data-category="Первая" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Первая</h5>
                       <a href="#" class="card-button">Go somewhere</a>
                     </div>
                   </div>
-                  <div class="card" data="Первая" style="width: 15rem;">
+                  <div class="card show" data-category="Первая" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Первая</h5>
                       <a href="#" class="card-button">Go somewhere</a>
                     </div>
                   </div>
-                  <div class="card" data="Вторая" style="width: 15rem;">
+                  <div class="card show" data-category="Вторая" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Вторая</h5>
                       <a href="#" class="card-button">Go somewhere</a>
                     </div>
                   </div>
-                  <div class="card" data="Четвертая" style="width: 15rem;">
+                  <div class="card show" data-category="Четвертая" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Четвертая</h5>
                       <a href="#" class="card-button">Go somewhere</a>
                     </div>
                   </div>
-                  <div class="card" data="Четвертая" style="width: 15rem;">
+                  <div class="card show" data-category="Четвертая" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Четвертая</h5>
                       <a href="#" class="card-button">Go somewhere</a>
                     </div>
                   </div>
-                  <div class="card" data="Третья" style="width: 15rem;">
+                  <div class="card show" data-category="Третья" style="width: 15rem;">
                     <img src="img/bg/background-white.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Третья</h5>
@@ -96,19 +101,19 @@
                     <div class="card__subtitle">Категории</div>
                     <ul class="card__list">
                         <li class="card__item">
-                            <div data="All" class="card__link">All</div>
+                            <div data-category="All" class="card__link">All</div>
                         </li>
                         <li class="card__item">
-                            <div data="Первая" class="card__link">Заглушка</div>
+                            <div data-category="Первая" class="card__link">Заглушка</div>
                         </li>
                         <li class="card__item">
-                            <div data="Вторая" class="card__link">Заглушка</div>
+                            <div data-category="Вторая" class="card__link">Заглушка</div>
                         </li>
                         <li class="card__item">
-                            <div data="Третья" class="card__link">Заглушка</div>
+                            <div data-category="Третья" class="card__link">Заглушка</div>
                         </li>
                         <li class="card__item">
-                            <div data="Четвертая" class="card__link">Заглушка</div>
+                            <div data-category="Четвертая" class="card__link">Заглушка</div>
                         </li>
                     </ul>
                 </nav>
@@ -164,6 +169,7 @@
 <script src='js/form.js'></script>
 <script src="js/skills.js"></script>
 <script src="js/card-block.js"></script>
+<script src="js/preloader.js"></script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

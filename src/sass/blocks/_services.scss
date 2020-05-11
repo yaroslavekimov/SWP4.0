@@ -55,7 +55,10 @@
     &__img {
         display: block;
         margin: 0 auto;
-        width: 20%;
+        padding: 10px;
+        border-radius: 100%;
+        width: 15%;
         height: 30%;
+        background-color: $main-color;
     }
 }
