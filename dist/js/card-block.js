@@ -1,7 +1,8 @@
 let cardBlog = document.querySelectorAll('.card'),
     cardNav = document.querySelector('.card__nav'),
     cardListBlog = document.querySelector('.card__list'),
-    buttonBlog = document.querySelectorAll('.card__link');
+    buttonBlog = document.querySelectorAll('.card__link'),
+    buttonCategory = document.querySelector('.card__button_category');
 
     function fillterCategory() {
         cardListBlog.addEventListener('click', function(event){
@@ -31,7 +32,7 @@ let cardBlog = document.querySelectorAll('.card'),
             window.addEventListener('scroll', function() {
                 let topX = window.pageYOffset;
 
-                if(topX >= 468 && cardNav.style.position !== 'fixed') {
+                if(topX >= 468 && cardNav.style.display !== 'none' && cardNav.style.position !== 'fixed') {
                     if(!cardNav.classList.contains('card__nav_fix')) {
                         cardNav.classList.toggle('card__nav_fix');
                     }
@@ -47,3 +48,24 @@ let cardBlog = document.querySelectorAll('.card'),
     }
 
     startCategory();
+
+    function categoryMin() {
+        buttonCategory.addEventListener('click', function() {
+            if(cardNav.style.display === "none") {
+                cardNav.style.display = "block";
+            } else {
+                cardNav.style.display = "none";
+            }
+
+            buttonBlog.forEach(item => {
+                item.addEventListener('click', () => {
+                    cardNav.style.display = "none";
+                });
+            });
+
+        });
+    }
+
+    if(cardListBlog && buttonBlog) {
+        categoryMin();
+    }

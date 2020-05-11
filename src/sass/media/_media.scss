@@ -1,0 +1,91 @@
+@media (max-width: 1200px) {
+    .logo__title {
+        font-size: 110px;
+    }
+    .language {
+        &__description {
+            font-size: 18px;
+        }
+    }
+    .about-me {
+        &__title {
+            font-size: 90px;
+        }
+    }
+    .about {
+        &__description {
+            font-size: 18px;
+            span {
+                font-size: 22px;
+            }
+        }
+    }
+    .card {
+        &__nav {
+            right: 45px;
+            &_fix {
+                width: 240px;
+                right: 60px;
+            }
+        }
+    }
+    .services {
+        &__description {
+            font-size: 13px;
+        }
+    }
+    .copyright {
+        font-size: 12px;
+    }
+    .privacy-policy {
+        font-size: 12px;
+    }
+}
+    
+@media (max-width: 991px) {
+    .logo__title {
+        font-size: 100px;
+    }
+    .about-me {
+        &__title {
+            font-size: 70px;
+        }
+    }
+    .card {
+        &__nav {
+            position: fixed;
+            display: none;
+            width: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__list {
+            background-color: rgba(0, 0, 0, 1);
+        }
+    }
+    .card__button_category {
+        position: fixed;
+        bottom: -55px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        padding: 20px 0px;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: $main-color;
+        &:hover.card__nav {
+            display: block;
+        }
+    }
+    .g-recaptcha {
+        display: flex;
+        justify-content: center;
+    }
+}
+   
+// @media (max-width: 767px)
+   
+// @media (max-width: 575px) 
+   
