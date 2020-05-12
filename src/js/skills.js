@@ -1,4 +1,5 @@
-let bar = document.querySelectorAll('.progress-bar');
+function skillsMod() {
+    let bar = document.querySelectorAll('.progress-bar');
 
     function startSkill() {
         for ( let i = 0; i < bar.length; i++) {
@@ -88,3 +89,6 @@ let bar = document.querySelectorAll('.progress-bar');
     }
 
     barCheck();
+}
+
+module.exports = skillsMod;

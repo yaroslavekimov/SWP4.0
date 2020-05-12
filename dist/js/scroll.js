@@ -1,4 +1,4 @@
-// function scrollMod() {
+function scrollMod() {
 
     $(window).scroll(function() {
         if ($(this).scrollTop() > 400) {
@@ -31,6 +31,6 @@
             }
         }, false);
     }
-// }
+}
 
-// module.exports = scrollMod;
+module.exports = scrollMod;

@@ -1,4 +1,5 @@
-let cardBlog = document.querySelectorAll('.card'),
+function cardBlockMod() {
+    let cardBlog = document.querySelectorAll('.card'),
     cardNav = document.querySelector('.card__nav'),
     cardListBlog = document.querySelector('.card__list'),
     buttonBlog = document.querySelectorAll('.card__link'),
@@ -69,3 +70,6 @@ let cardBlog = document.querySelectorAll('.card'),
     if(cardListBlog && buttonBlog) {
         categoryMin();
     }
+}
+
+module.exports = cardBlockMod;

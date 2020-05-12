@@ -1,3 +1,4 @@
+function formMod() {
     let uname = document.querySelector('#uname'),
         uemail = document.querySelector('#uemail'),
         textarea = document.querySelector('#umessage'),
@@ -108,3 +109,6 @@
                 }
             });
         }
+}
+
+module.exports = formMod;

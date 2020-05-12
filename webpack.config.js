@@ -4,7 +4,7 @@ let path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/js/script.js',
+  entry: './src/js/main.js',
   output: {
     filename: 'index.js',
     path: __dirname + '/dist/js'

@@ -1,4 +1,5 @@
-let preloader = document.querySelector('.preloader'),
+function preloaderMod() {
+    let preloader = document.querySelector('.preloader'),
     loading = document.querySelector('.loading');
 
     function nonePreload() {
@@ -12,3 +13,6 @@ let preloader = document.querySelector('.preloader'),
         setTimeout(nonePreload, 1000);
         
     });
+}
+
+module.exports = preloaderMod;

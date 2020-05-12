@@ -1,4 +1,4 @@
-// function cookieMod() {
+function cookieMod() {
     let cookie = document.getElementById('cookie'),
     cookieBtn = document.getElementById('cookie_btn');
 
@@ -12,6 +12,6 @@
             localStorage.setItem('cookieLocalStorage', true);
             cookie.classList.remove('cookie_active');
         });
-// }
+}
 
-// module.exports = cookieMod;
+module.exports = cookieMod;

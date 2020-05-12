@@ -1,4 +1,4 @@
-// function menuMod() {
+function menuMod() {
 
     let menu = document.querySelector('.menu'),
         menuList = document.querySelector('.menu__list'),
@@ -19,6 +19,6 @@
         toggleList();
         toggleItem();
     });
-// }
+}
 
-// module.exports = menuMod;
+module.exports = menuMod;

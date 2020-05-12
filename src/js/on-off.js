@@ -1,4 +1,4 @@
-// function onOffMod() {
+function onOffMod() {
 
     let on = document.querySelector('.black-on'),
         fix = document.querySelector('.back-fix'),
@@ -124,6 +124,6 @@
         toggleSection();
 
     });
-// }
+}
 
-// module.exports = onOffMod;
+module.exports = onOffMod;
