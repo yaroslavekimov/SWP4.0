@@ -1,10 +1,10 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"].'/recaptchalib.php');
-// Введите свой секретный ключ
+require_once($_SERVER["DOCUMENT_ROOT"].'/mailer/recaptchalib.php');
+
 $secret = "6Lc4oOgUAAAAAB2amUda6kq_4jCpKiIgLMaGSJi3";
-// пустой ответ каптчи
+
 $response = null;
-// Проверка вашего секретного ключа
+
 $reCaptcha = new ReCaptcha($secret);
 if ($_POST["g-recaptcha-response"]) {
 $response = $reCaptcha->verifyResponse(
@@ -27,18 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $uemailFieldset = "<b>Почта:</b>";
     }
     if (isset($_POST['umessage'])) {
-      $formInfo = strip_tags($_POST['umessage']);
-      $formInfoFieldset = "<b>Сообщение:</b>";
+      $umessage = strip_tags($_POST['umessage']);
+      $umessageFieldset = "<b>Сообщение:</b>";
     }
  
-    $to = "admin@simplewebpage.ru"; /*Укажите адрес, на который должно приходить письмо*/
-    $sendfrom = "admin@simplewebpage.ru"; /*Укажите адрес, с которого будет приходить письмо, можно не настоящий, нужно для формирования заголовка письма*/
+    $to = "admin@simplewebpage.ru"; 
+    $sendfrom = "admin@simplewebpage.ru"; 
     $headers  = "From: " . "admin@simplewebpage.ru" . "\r\n";
     $headers .= "Reply-To: ". "admin@simplewebpage.ru" . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
     $headers .= "Content-Transfer-Encoding: 8bit \r\n";
-    $subject = "Новая заявка:";
+    $subject = "Форма обратной связи";
     $message = "$unameFieldset $uname<br>
                 $uemailFieldset $uemail<br>
                 $formInfoFieldset $umessage";
@@ -54,5 +54,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 } else {
-      header ("Location: https://simplewebpage.ru"); // главная страница вашего лендинга
+      header ("Location: https://simplewebpage.ru");
 }

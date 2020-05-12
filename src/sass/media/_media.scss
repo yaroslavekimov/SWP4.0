@@ -123,6 +123,10 @@
         margin-top: 30px;
     }
     .post {
+        &__subtitle {
+            text-align: center;
+            font-size: 16px;
+        }
         &__text {
             margin: 30px 40px;
             font-size: 16px;
@@ -218,6 +222,10 @@
         }
     }
     .post {
+        &__subtitle {
+            text-align: center;
+            font-size: 14px;
+        }
         &__text {
             font-size: 14px;
             text-indent: 30px;
@@ -358,6 +366,10 @@
         width: 80%;
     }
     .post {
+        &__subtitle {
+            text-align: center;
+            font-size: 11px;
+        }
         &__text {
             margin: 30px 0px;
             font-size: 11px;

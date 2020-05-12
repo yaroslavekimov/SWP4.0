@@ -69,13 +69,12 @@ function formMod() {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: "mailer/wdh_send_form_comment.php",
+                    url: "../mailer/wdh_send_form_comment.php",
                     data: $("#wdh_form").serialize(),
                     success: function(data){
                         $('#wdh_result_form').html(data);
                     }
                 });
-                submitError.textContent = 'Спасибо! Ваше сообщение отправленно.';
             } else {
                 e.preventDefault();
                 submitError.textContent = 'Заполните поля формы!';
@@ -91,7 +90,6 @@ function formMod() {
                         $('#wdh_result_form').html(data);
                     }
                 });
-                submitError.textContent = 'Спасибо! Ваше сообщение отправленно.';
             } else {
                 e.preventDefault();
                 submitError.textContent = 'Заполните поля формы!';
@@ -104,8 +102,6 @@ function formMod() {
             let a = postTitle.textContent;
 
                 ucomment.value = a;
-
-            console.log(a);
         }
     }
 

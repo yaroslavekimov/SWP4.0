@@ -1,40 +1,34 @@
 User-agent: *
-Disallow: /welpan/
+Disallow: /swp-welcome/
 Allow: /
 Allow: /js/
 Allow: /mailer/
-Allow: /certificate/
 Allow: /css/
 Allow: /fonts/
-Allow: /icon/
+Allow: /img/icon/
 Allow: /img/
-Allow: /portfolio/
 Crawl-Delay: 1
 
 User-agent: GoogleBot
-Disallow: /welpan/
+Disallow: /swp-welcome/
 Allow: /
 Allow: /js/
 Allow: /mailer/
-Allow: /certificate/
 Allow: /css/
 Allow: /fonts/
-Allow: /icon/
+Allow: /img/icon/
 Allow: /img/
-Allow: /portfolio/
 Crawl-Delay: 0.1
 
 User-agent: Yandex
-Disallow: /welpan/
+Disallow: /swp-welcome/
 Allow: /
 Allow: /js/
 Allow: /mailer/
-Allow: /certificate/
 Allow: /css/
 Allow: /fonts/
-Allow: /icon/
+Allow: /img/icon/
 Allow: /img/
-Allow: /portfolio/
 Clean-Param: utm_source&utm_medium&utm_campaign
 Crawl-Delay: 0.1
 
