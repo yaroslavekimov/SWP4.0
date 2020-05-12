@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 	if (isset($_POST['ucomment'])) {
       $ucomment = strip_tags($_POST['ucomment']);
-      $ucommentFieldset = "<b>Заголовок:</b>";
+      $ucommentFieldset = "Заголовок поста:";
     }
 	
     $to = "admin@simplewebpage.ru"; 
