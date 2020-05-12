@@ -85,6 +85,10 @@ function onOffMod() {
         if (cardList) {
             cardList.classList.toggle('card__list_white');
         }
+        if (post) {
+            post.classList.toggle('post_white');
+            postBackground.classList.toggle('post__background_white');
+        }
     }
 
     function toggleSection() {
@@ -121,8 +125,6 @@ function onOffMod() {
         on.classList.toggle('black-on_off');
         fix.classList.toggle('back-fix_white');
         menuWhite.classList.toggle('menu_white');
-        post.classList.toggle('post_white');
-        postBackground.classList.toggle('post__background_white');
         footer.classList.toggle('footer_white');
         toggleItemWhite();
         toggleSection();
