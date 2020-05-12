@@ -9,6 +9,8 @@ function onOffMod() {
         sectionServices = document.querySelectorAll('.services'),
         sectionFeedForm = document.querySelectorAll('.feedform'),
         blog = document.querySelector('.blog'),
+        post = document.querySelector('.post'),
+        postBackground = document.querySelector('.post__background'),
         categoryTitle = document.querySelector('.card__subtitle'),
         cardList = document.querySelector('.card__list'),
         footer = document.querySelector('.footer'),
@@ -119,6 +121,8 @@ function onOffMod() {
         on.classList.toggle('black-on_off');
         fix.classList.toggle('back-fix_white');
         menuWhite.classList.toggle('menu_white');
+        post.classList.toggle('post_white');
+        postBackground.classList.toggle('post__background_white');
         footer.classList.toggle('footer_white');
         toggleItemWhite();
         toggleSection();

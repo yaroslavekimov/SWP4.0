@@ -2,6 +2,8 @@ function formMod() {
     let uname = document.querySelector('#uname'),
         uemail = document.querySelector('#uemail'),
         textarea = document.querySelector('#umessage'),
+        ucomment = document.querySelector('#ucomment'),
+        postTitle = document.querySelector('.post__title'),
         errorName = document.querySelector('.error__name'),
         errorEmail = document.querySelector('.error__email'),
         submitError = document.querySelector('#wdh_result_form');
@@ -62,21 +64,52 @@ function formMod() {
 
     $("#wdh_form").submit(function(e){
         submitError.textContent = '';
-        if(error.name === true && error.email === true) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "mailer/wdh_send_form.php",
-                data: $("#wdh_form").serialize(),
-                success: function(data){
-                    $('#wdh_result_form').html(data);
-                }
-            });
+        if(postTitle && ucomment) {
+            if(error.name === true && error.email === true) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/wdh_send_form_comment.php",
+                    data: $("#wdh_form").serialize(),
+                    success: function(data){
+                        $('#wdh_result_form').html(data);
+                    }
+                });
+                submitError.textContent = 'Спасибо! Ваше сообщение отправленно.';
+            } else {
+                e.preventDefault();
+                submitError.textContent = 'Заполните поля формы!';
+            }
         } else {
-            e.preventDefault();
-            submitError.textContent = 'Заполните поля формы!';
+            if(error.name === true && error.email === true) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/wdh_send_form.php",
+                    data: $("#wdh_form").serialize(),
+                    success: function(data){
+                        $('#wdh_result_form').html(data);
+                    }
+                });
+                submitError.textContent = 'Спасибо! Ваше сообщение отправленно.';
+            } else {
+                e.preventDefault();
+                submitError.textContent = 'Заполните поля формы!';
+            }
         }
     });
+
+    function getPostTitle() {
+        if(postTitle && ucomment) {
+            let a = postTitle.textContent;
+
+                ucomment.value = a;
+
+            console.log(a);
+        }
+    }
+
+    getPostTitle();
 
     let checkbox = document.getElementById('checkbox'),
             submit = document.getElementById('submit');

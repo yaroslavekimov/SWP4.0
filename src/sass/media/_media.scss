@@ -122,6 +122,19 @@
     .mt {
         margin-top: 30px;
     }
+    .post {
+        &__text {
+            margin: 30px 40px;
+            font-size: 16px;
+        }
+        &__text-code {
+            font-size: 14px;
+            text-align: left;
+        }
+        &__text-spaces {
+            margin: 0;
+        }
+    }
 }
    
 @media (max-width: 767px) {
@@ -202,6 +215,19 @@
     .feedform {
         &__title {
             font-size: 25px;
+        }
+    }
+    .post {
+        &__text {
+            font-size: 14px;
+            text-indent: 30px;
+        }
+        &__text-code {
+            font-size: 12px;
+            text-align: left;
+        }
+        &__text-spaces {
+            margin: 0;
         }
     }
 }
@@ -330,6 +356,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
+    }
+    .post {
+        &__text {
+            margin: 30px 0px;
+            font-size: 11px;
+            text-indent: 15px;
+        }
+        &__text-code {
+            font-size: 10px;
+            text-align: left;
+        }
+        &__text-spaces {
+            margin: 0;
+        }
     }
 }
 @media (max-width: 380px) {

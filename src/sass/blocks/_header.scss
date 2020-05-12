@@ -33,7 +33,7 @@ header {
         width: 80%;
         height: 80%;
         transition: 1s all;
-        background: url('../../img/icon/light-icon.png') center center/cover no-repeat;
+        background: url('../img/icon/light-icon.png') center center/cover no-repeat;
     }
     &::before {
         content: 'Black and white';
@@ -64,7 +64,7 @@ header {
             width: 80%;
             height: 80%;
             transition: 1s all;
-            background: url('../../img/icon/on-icon.png') center center/cover no-repeat;
+            background: url('../img/icon/on-icon.png') center center/cover no-repeat;
         }
     }
 }
@@ -100,7 +100,7 @@ nav {
         width: 80%;
         height: 80%;
         z-index: 777;
-        background: url('../../img/icon/menu-icon.png') center center/cover no-repeat;
+        background: url('../img/icon/menu-icon.png') center center/cover no-repeat;
     }
     &::before {
         content: 'Menu';
