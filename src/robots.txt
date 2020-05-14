@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /blog/template-test/
 Allow: /
 Allow: /blog/
 Allow: /template/
@@ -12,6 +13,7 @@ Allow: /img/
 Crawl-Delay: 1
 
 User-agent: GoogleBot
+Disallow: /blog/template-test/
 Allow: /
 Allow: /blog/
 Allow: /template/
@@ -25,6 +27,7 @@ Allow: /img/
 Crawl-Delay: 0.1
 
 User-agent: Yandex
+Disallow: /blog/template-test/
 Allow: /
 Allow: /blog/
 Allow: /template/

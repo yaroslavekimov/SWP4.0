@@ -1,6 +1,9 @@
 User-agent: *
-Disallow: /swp-welcome/
+Disallow: /blog/template-test/
 Allow: /
+Allow: /blog/
+Allow: /template/
+Allow: /files/
 Allow: /js/
 Allow: /mailer/
 Allow: /css/
@@ -10,8 +13,11 @@ Allow: /img/
 Crawl-Delay: 1
 
 User-agent: GoogleBot
-Disallow: /swp-welcome/
+Disallow: /blog/template-test/
 Allow: /
+Allow: /blog/
+Allow: /template/
+Allow: /files/
 Allow: /js/
 Allow: /mailer/
 Allow: /css/
@@ -21,8 +27,11 @@ Allow: /img/
 Crawl-Delay: 0.1
 
 User-agent: Yandex
-Disallow: /swp-welcome/
+Disallow: /blog/template-test/
 Allow: /
+Allow: /blog/
+Allow: /template/
+Allow: /files/
 Allow: /js/
 Allow: /mailer/
 Allow: /css/

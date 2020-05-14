@@ -101,6 +101,9 @@
             background-color: $main-color;
         }
     }
+    &-img-top {
+        height: 133px;
+    }
     &__nav {
         position: absolute;
         top: -8px;
@@ -164,4 +167,18 @@
 .card__button_category {
     display: none;
     z-index: 7;
+}
+
+.development {
+    position: fixed; 
+    top: 0px;
+    left: 0px;
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    color: red;
+    background-color: black;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 6;
 }
