@@ -131,6 +131,9 @@
             margin: 30px 40px;
             font-size: 16px;
         }
+        &__text-center {
+            font-size: 16px;
+        }
         &__text-code {
             font-size: 14px;
             text-align: left;
@@ -229,6 +232,9 @@
         &__text {
             font-size: 14px;
             text-indent: 30px;
+        }
+        &__text-center {
+            font-size: 14px;
         }
         &__text-code {
             font-size: 12px;
@@ -374,6 +380,9 @@
             margin: 30px 0px;
             font-size: 11px;
             text-indent: 15px;
+        }
+        &__text-center {
+            font-size: 11px;
         }
         &__text-code {
             font-size: 10px;
