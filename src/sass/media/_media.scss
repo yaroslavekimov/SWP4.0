@@ -123,6 +123,9 @@
         margin-top: 30px;
     }
     .post {
+        &__title {
+            font-size: 30px;
+        }
         &__subtitle {
             text-align: center;
             font-size: 16px;
@@ -225,6 +228,9 @@
         }
     }
     .post {
+        &__title {
+            font-size: 25px;
+        }
         &__subtitle {
             text-align: center;
             font-size: 14px;
@@ -372,6 +378,9 @@
         width: 80%;
     }
     .post {
+        &__title {
+            font-size: 20px;
+        }
         &__subtitle {
             text-align: center;
             font-size: 11px;

@@ -71,39 +71,96 @@
                     Добавим сам блок в верстку:
                 </p>
             </div>
-            <div class="post__code">
-                <div class="row justify-content-center">
-                    <div class="col-10 post__code-center">
-                        <img src="../img/blog/preloader/HTML.png" alt="как сделать прелоадер для сайта">
-                    </div>
-                </div>
-            </div>
+            <pre class="post__text-code">
+                <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;TEST Preloader&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            
+        &lt;div class="preloader"&gt;
+            &lt;div class="text"&gt;Загрузка ...&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script src="main.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </pre>
             <h2 class="post__subtitle">CSS</h2>
             <div class="post__paragraph">
                 <p class="post__text">
                     Немного стилей для красоты:
                 </p>
             </div>
-            <div class="post__code">
-                <div class="row justify-content-center">
-                    <div class="col-10 post__code-center">
-                        <img src="../img/blog/preloader/CSS.png" alt="прелоадер">
-                    </div>
-                </div>
-            </div>
+            <pre class="post__text-code">
+                <code>
+        * {
+            position: relative;
+        }
+        .preloader {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            z-index: 5;
+        }
+        .text {
+            text-align: center;
+            font-size: 100px;
+            color: chartreuse;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.1;
+            }
+        }
+                </code>
+            </pre>
             <h2 class="post__subtitle">JavaScript</h2>
             <div class="post__paragraph">
                 <p class="post__text">
                     Ну и сам скрипт:
                 </p>
             </div>
-            <div class="post__code">
-                <div class="row justify-content-center">
-                    <div class="col-10 post__code-center">
-                        <img src="../img/blog/preloader/JS.png" alt="скачать прелоадер">
-                    </div>
-                </div>
-            </div>
+            <pre class="post__text-code">
+                <code>
+        window.addEventListener('DOMContentLoaded', function() {
+
+            ' use strict ';
+        
+            let preloader = document.querySelector('.preloader'); 
+            // Получаем прелодер
+        
+                (function start() {
+                    preloader.classList.add('fade'); 
+                    // Вешаем на него анимацию. При помощи добавления класса. Для плавного скрытия.
+        
+                    setTimeout( // Прячем блок через 1 секунду 
+                        function preloaderDisplayNone() { 
+                            preloader.style.display = "none"; // Меняем стили
+                        }, 1000); //Задержка запуска в миллисекундах
+                }());
+        });
+                </code>
+            </pre>
             <div class="post__paragraph">
                 <p class="post__text">
                     Вот таким простым способом можно добавить прелоадер на сайт. Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
@@ -111,7 +168,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button">
-                    <div class="ya-share2" data-url="https://simplewebpage/blog/preloader.html" data-title="Как сделать прелоадер для сайта" data-image="https://simplewebpage/img/blog/preloader/preloader.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
+                    <div class="ya-share2" data-url="https://simplewebpage/blog/preloader.html" data-title="Как сделать прелоадер для сайта" data-image="https://simplewebpage.ru/img/blog/preloader/JS.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-2 offset-md-1 col-sm-2 offset-sm-0 mt__button">
                     <div class="test__button">
