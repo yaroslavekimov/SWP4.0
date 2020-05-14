@@ -43,7 +43,7 @@
 <section id="up" class="post">
     <div class="container">
         <div class="row">
-            <div class="col-xl-6 offset-xl-3">
+            <div class="col-10 offset-1">
                 <h1 class="post__title">POST</h1>
                 <h2 class="post__subtitle">14.05.2020</h2>
             </div>
@@ -63,11 +63,33 @@
             <div class="post__img">
                 <img src="../img/bg/background-black.jpg" alt="">
             </div>
-            <div class="post__code">
-                <pre class="post__text-code">if( a > b) {</pre>
-                <pre class="post__text-code">           <span>console.log(item)</span> console.log(item)console.log(item)console.log(item)console.log(item)</pre>
-                <pre class="post__text-code">   }</pre>
+            <h2 class="post__subtitle">HTML</h2>
+            <div class="post__paragraph">
+                <p class="post__text">
+                    Добавим сам блок в верстку (обязательно в самое начало сразу после открытия body):
+                </p>
             </div>
+            <pre class="post__text-code">
+                <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;TEST Preloader&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            
+        &lt;div class="preloader"&gt;
+            &lt;div class="text"&gt;Загрузка ...&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script src="main.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </pre>
             <div class="row">
                 <div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button">
                     <div class="ya-share2" data-url="" data-title="Title" data-image="" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>

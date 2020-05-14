@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="yandex-verification" content="b4e71a31525fc526"><meta name="google-site-verification" content="7VJEI4NRqJgvyauJuTwsFjsQYsnAkb6zKiLyfCcnIEU"><meta name="description" content="Создание модального окна с предупреждением об использовании cookies"><meta name="keywords" content="Модальное окно, javascript, css, html, файлы cookie"><title>Модальное окно | Предупреждение об использовании cookies</title><link rel="shortcut icon" href="../favicon.png" type="image/x-icon"><link rel="stylesheet" href="../css/style.min.css"></head><body><div class="preloader"><div class="loading">loading</div></div><div class="back-fix"></div><header><div class="black-on"></div><nav><div class="menu"><ul class="menu__list"><li class="menu__list_item"><a href="../index.html" class="menu__list_item_link"><img src="../img/icon/home-icon.png" alt="web-разработка"></a></li><li class="menu__list_item"><a href="../blog.html" class="menu__list_item_link"><img src="../img/icon/blog-icon.png" alt="создание блогов на wordpress"></a></li><li class="menu__list_item"><a href="../template.html" class="menu__list_item_link"><img src="../img/icon/template-icon.png" alt="html шаблоны"></a></li><li class="menu__list_item"><a href="../about-me.html" class="menu__list_item_link"><img src="../img/icon/contact-icon.png" alt="верстка html web-страниц"></a></li></ul></div></nav></header><section id="up" class="post"><div class="container"><div class="row"><div class="col-10 offset-1"><h1 class="post__title">Модальное окно и предупреждение об использовании cookies</h1><h2 class="post__subtitle">14.05.2020</h2></div></div></div></section><div class="container"><main class="post__background"><article class="post__content"><h2 class="post__subtitle">Cookie</h2><div class="post__paragraph"><p class="post__text">Cookie - данные, которые отправляется с сервера и хранится в памяти браузера.</p><ul><li>Они нужны например для хранения логина и пароля, что бы при повторном посещении сайта вам не нужно было их вводить.</li><li>При посещении интернет-магазинов в них могут храниться данные о товарах добавленных в корзину.</li><li>В инструментах аналитики для отслеживания действий.</li><li>и так далее...</li></ul><p></p></div><h2 class="post__subtitle">HTML</h2><div class="post__paragraph"><p class="post__text">Добавим модальное окно в верстку:</p></div><pre class="post__text-code">
+                <code>
+        &lt;div id="cookie" class="cookie"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="cookie__modal"&gt;Сайт использует cookie для хранения данных.&lt;/div&gt;
+                &lt;button id="cookie_btn" class="cookie__button"&gt;OK&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+                </code>
+            </pre><h2 class="post__subtitle">CSS</h2><div class="post__paragraph"><p class="post__text">Добавим стилей:</p></div><pre class="post__text-code">
+                <code>
+        * {
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cookie {
+            padding: 10px;
+            position: fixed;
+            bottom: -60px; // В неактивном состоянии окно прячется внизу
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            color: black;
+            background-color: gray;
+            transition: 1s all; // Для плавной анимации
+        }
+        .cookie_active {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            color: black;
+            background-color: gray;
+            transition: 1s all;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cookie__modal {
+            text-align: center;
+        }
+        .cookie__button {
+            margin-left: 20px;
+            width: 40px;
+            height: 25px;
+        }
+                </code>
+            </pre><h2 class="post__subtitle">JavaScript</h2><div class="post__paragraph"><p class="post__text">Скрипт:</p></div><pre class="post__text-code">
+                <code>
+        window.addEventListener('DOMContentLoaded', function() {
+
+            ' use strict ';
+        
+            let cookie = document.getElementById('cookie'),
+                cookieBtn = document.getElementById('cookie_btn');
+        
+                cookieBtn.addEventListener('click', function() { // Вешаем обработчик события "Клик"
+                    localStorage.setItem('cookie', true); // При нажатии на кнопку записываем данные в локальное хранилище браузера
+                    cookie.classList.remove('cookie_active'); // И удаляем класс активности у модального окна
+                });
+        
+                if(localStorage.getItem('cookie') === 'true') { // При следующем открытие сайта проверяем локальное хранилище
+                    cookie.classList.remove('cookie_active'); // Если данные есть удаляем класс активности
+                } else {
+                    cookie.classList.add('cookie_active'); // Если данных о нажатие нету то добавляем класс активности
+                } 
+        });
+                </code>
+            </pre><div class="post__paragraph"><p class="post__text">Модальное окно с предупреждением готово!</p></div><div class="post__paragraph"><p class="post__text">Что бы очистить localStorage достаточно нажать правой кнопкой мыши "Исследовать элемент" во вкладке "Application" найити и удалить пару "cookie - true" или сделать это в настройках браузера.</p></div><div class="post__paragraph"><p class="post__text">Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.</p></div><div class="row"><div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button"><div class="ya-share2" data-url="https://simplewebpage.ru/blog/modal-cookie.html" data-title="Создание модального окна с предупреждением об использовании cookies" data-image="https://simplewebpage.ru/img/blog/modal-cookie/modal-cookie.jpg" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div></div><div class="col-4 offset-4 col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-2 offset-md-1 col-sm-2 offset-sm-0 mt__button"><div class="test__button"><a href="/blog/modal-cookie/index.html">TEST</a></div></div><div class="col-4 offset-4 col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 offset-sm-2 mt__button"><div class="test__button"><a href="/files/blog/modal-cookie.7z">Скачать</a></div></div></div><div class="row"><div class="col-12"><div class="post__text-center">При использовании или копировании материалов просьба указывать активную, индексируемую ссылку на источник.</div></div></div></article></main></div><section class="feedform feedform__mt"><div class="container"><div class="row"><div class="col-xl-6 offset-xl-3"><h2 class="feedform__title">Оставить комментарий</h2></div></div><div class="row"><div class="col-xl-10 offset-xl-1"><form id="wdh_form" action="#" class="feedform__general"><div class="row"><div class="col-xl-5 offset-xl-1 feedform__wrapper"><input id="ucomment" name="ucomment" type="hidden"> <label>Введите ваше имя:</label> <input id="uname" name="uname" required placeholder="name" type="text"> <span class="error error__name"></span></div><div class="col-xl-5 feedform__wrapper"><label>Введите ваш e-mail:</label> <input id="uemail" name="uemail" required placeholder="eeee@mail.ru" type="email"> <span class="error error__email"></span></div></div><div class="row"><div class="col-xl-10 offset-xl-1 feedform__wrapper"><label>Введите ваше сообщение:</label> <textarea id="umessage" name="umessage" required rows="5" maxlength="300" placeholder="..."></textarea></div></div><div class="row"><div class="col-12 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1"><div class="col feedform__wrapper_checkbox"><input id="checkbox" type="checkbox"> <label>Нажимая кнопку "отправить" вы даете согласие на обработку введенных персональных данных и соглашаетесь с <a href="privacy-policy.html" target="_blank" class="cookie__privacy-policy">политикой конфиденциальности</a></label></div></div><div class="col-12 col-xl-5 col-lg-5"><div class="g-recaptcha" data-sitekey="6Lc4oOgUAAAAALk4SLd6i-lh-1KzAqFcrZ264f0v"></div></div></div><div class="row"><div class="col-4 offset-4"><button id="submit" type="submit" class="feedform__button">ОТПРАВИТЬ</button></div><div class="col-4 offset-4"><div id="wdh_result_form"></div></div></div></form></div></div></div></section><footer class="footer"><div class="copyright">© 2020 «Simple Web Page» Все права защищены.</div><div class="privacy-policy"><a href="privacy-policy.html" target="_blank">Политика конфиденциальности</a></div></footer><a href="#up" class="pageup"><img src="../img/icon/up.png" alt="web-page"></a><div id="cookie" class="cookie"><div class="container"><div class="row"><div class="col-9 col-xl-11 col-lg-11"><div class="cookie__modal">Сайт использует cookie для хранения данных. Продолжая использовать сайт, вы даете свое согласие на работу с этими файлами, а так же соглашаетесь с <a href="privacy-policy.html" target="_blank" class="cookie__privacy-policy">политикой конфиденциальности</a></div></div><div class="col-1 col-xl-1 col-lg-1"><button id="cookie_btn" class="cookie__button">OK</button></div></div></div></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://www.google.com/recaptcha/api.js?hl=ru"></script><script src="https://yastatic.net/share2/share.js" async="async"></script><script src="../js/jquery-1.11.0.min.js"></script><script src="../js/jquery-migrate-1.2.1.min.js"></script><script src="../js/bootstrap.min.js"></script><script src="../js/index.js"></script><!-- Yandex.Metrika counter --><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(61582699, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });</script><noscript><div><img src="https://mc.yandex.ru/watch/61582699" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter --></body></html>

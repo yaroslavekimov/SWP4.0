@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="b4e71a31525fc526" />
     <meta name="google-site-verification" content="7VJEI4NRqJgvyauJuTwsFjsQYsnAkb6zKiLyfCcnIEU" />
-    <meta name="description" content="Самый простой preloader (прелодер) для сайта. Что бы скррыть страницу пока она загружается" />
-    <meta name="keywords" content="web-разработка, frontend, javascript, preloader, прелодер,как скрыть страницу, загрузка страницы, как сделать прелодер">
-    <title>Самый простой preloader для сайта</title>
+    <meta name="description" content="Создание модального окна с предупреждением об использовании cookies" />
+    <meta name="keywords" content="Модальное окно, javascript, css, html, файлы cookie">
+    <title>Модальное окно | Предупреждение об использовании cookies</title>
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.min.css">
 </head>
@@ -43,8 +43,8 @@
 <section id="up" class="post">
     <div class="container">
         <div class="row">
-            <div class="col-xl-6 offset-xl-3">
-                <h1 class="post__title">Самый простой preloader для сайта</h1>
+            <div class="col-10 offset-1">
+                <h1 class="post__title">Модальное окно и предупреждение об использовании cookies</h1>
                 <h2 class="post__subtitle">14.05.2020</h2>
             </div>
         </div>
@@ -54,90 +54,86 @@
 <div class="container">
     <main class="post__background">
         <article class="post__content">
-            <h2 class="post__subtitle">Как сделать прелоадер.</h2>
+            <h2 class="post__subtitle">Cookie</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Как правило прелодер нужен для того что бы скрыть страницу пока она загружается.
-                    Если на странице присутствует множество скриптов, картинок и так далее, то естественно увеличивается время ее загрузки и тут то на помощь приходит прелодер. Он скрывает весь процесс загрузки от пользователя, а как только она загрузится он покает ее во всей красе.
-                    Сделать его очень просто. 
+                    Cookie - данные, которые отправляется с сервера и хранится в памяти браузера.
+                    <ul>
+                        <li>Они нужны например для хранения логина и пароля, что бы при повторном посещении сайта вам не нужно было их вводить. </li>
+                        <li>При посещении интернет-магазинов в них могут храниться данные о товарах добавленных в корзину.</li>
+                        <li>В инструментах аналитики для отслеживания действий.</li>
+                        <li>и так далее...</li>
+                    </ul>
                 </p>
-            </div>
-            <div class="post__img">
-                <img src="../img/blog/preloader/preloader.png" alt="прелоадер для сайта">
             </div>
             <h2 class="post__subtitle">HTML</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Добавим сам блок в верстку (обязательно в самое начало сразу после открытия body):
+                    Добавим модальное окно в верстку:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="en"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;TEST Preloader&lt;/title&gt;
-            &lt;link rel="stylesheet" href="style.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            
-        &lt;div class="preloader"&gt;
-            &lt;div class="text"&gt;Загрузка ...&lt;/div&gt;
+        &lt;div id="cookie" class="cookie"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="cookie__modal"&gt;Сайт использует cookie для хранения данных.&lt;/div&gt;
+                &lt;button id="cookie_btn" class="cookie__button"&gt;OK&lt;/button&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
-
-        &lt;script src="main.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
                 </code>
             </pre>
             <h2 class="post__subtitle">CSS</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Немного стилей для красоты:
+                    Добавим стилей:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
         * {
             position: relative;
+            box-sizing: border-box;
         }
-        .preloader {
+        .cookie {
+            padding: 10px;
             position: fixed;
-            top: 0px;
+            bottom: -60px; // В неактивном состоянии окно прячется внизу
             left: 0px;
+            width: 100%;
+            height: 50px;
+            color: black;
+            background-color: gray;
+            transition: 1s all; // Для плавной анимации
+        }
+        .cookie_active {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            color: black;
+            background-color: gray;
+            transition: 1s all;
+        }
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            z-index: 5;
         }
-        .text {
+        .cookie__modal {
             text-align: center;
-            font-size: 100px;
-            color: chartreuse;
         }
-        .fade {
-            animation-name: fade;
-            animation-duration: 1s;
-        }
-        @keyframes fade {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0.1;
-            }
+        .cookie__button {
+            margin-left: 20px;
+            width: 40px;
+            height: 25px;
         }
                 </code>
             </pre>
             <h2 class="post__subtitle">JavaScript</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Ну и сам скрипт:
+                    Скрипт:
                 </p>
             </div>
             <pre class="post__text-code">
@@ -146,38 +142,49 @@
 
             ' use strict ';
         
-            let preloader = document.querySelector('.preloader'); 
-            // Получаем прелодер
+            let cookie = document.getElementById('cookie'),
+                cookieBtn = document.getElementById('cookie_btn');
         
-                (function start() {
-                    preloader.classList.add('fade'); 
-                    // Вешаем на него анимацию. При помощи добавления класса. Для плавного скрытия.
+                cookieBtn.addEventListener('click', function() { // Вешаем обработчик события "Клик"
+                    localStorage.setItem('cookie', true); // При нажатии на кнопку записываем данные в локальное хранилище браузера
+                    cookie.classList.remove('cookie_active'); // И удаляем класс активности у модального окна
+                });
         
-                    setTimeout( // Прячем блок через 1 секунду 
-                        function preloaderDisplayNone() { 
-                            preloader.style.display = "none"; // Меняем стили
-                        }, 1000); //Задержка запуска в миллисекундах
-                }());
+                if(localStorage.getItem('cookie') === 'true') { // При следующем открытие сайта проверяем локальное хранилище
+                    cookie.classList.remove('cookie_active'); // Если данные есть удаляем класс активности
+                } else {
+                    cookie.classList.add('cookie_active'); // Если данных о нажатие нету то добавляем класс активности
+                } 
         });
                 </code>
             </pre>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Вот таким простым способом можно добавить прелоадер на сайт. Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
+                    Модальное окно с предупреждением готово!
+                </p>
+            </div>
+            <div class="post__paragraph">
+                <p class="post__text">
+                    Что бы очистить localStorage достаточно нажать правой кнопкой мыши "Исследовать элемент" во вкладке "Application" найити и удалить пару "cookie - true" или сделать это в настройках браузера.
+                </p>
+            </div>
+            <div class="post__paragraph">
+                <p class="post__text">
+                    Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
                 </p>
             </div>
             <div class="row">
                 <div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button">
-                    <div class="ya-share2" data-url="https://simplewebpage/blog/preloader.html" data-title="Как сделать прелоадер для сайта" data-image="https://simplewebpage.ru/img/blog/preloader/JS.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
+                    <div class="ya-share2" data-url="https://simplewebpage.ru/blog/modal-cookie.html" data-title="Создание модального окна с предупреждением об использовании cookies" data-image="https://simplewebpage.ru/img/blog/modal-cookie/modal-cookie.jpg" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-2 offset-md-1 col-sm-2 offset-sm-0 mt__button">
                     <div class="test__button">
-                        <a href="/blog/preloader-test/index.html">TEST</a>
+                        <a href="/blog/modal-cookie/index.html">TEST</a>
                     </div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 offset-sm-2 mt__button">
                     <div class="test__button">
-                        <a href="/files/blog/preloader-test.7z">Скачать</a>
+                        <a href="/files/blog/modal-cookie.7z">Скачать</a>
                     </div>
                 </div>
             </div>
