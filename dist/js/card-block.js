@@ -8,20 +8,23 @@ function cardBlockMod() {
     function fillterCategory() {
         cardListBlog.addEventListener('click', function(event){
             let target = event.target;
-    
+
                 for(let i = 0; i < cardBlog.length; i++) {
                     cardBlog[i].style.display = "none";
                 }
-    
+
             if (target && target.getAttribute('data-category')) {
                 for(let i = 0; i < cardBlog.length; i++) {
-                    if(target.getAttribute('data-category') === cardBlog[i].getAttribute('data-category')) {
-                        let a = cardBlog[i];
-                            a.style.display = "flex";
-                    } else if(target.getAttribute('data-category') === "All") {
-                        let a = cardBlog[i];
-                            a.style.display = "flex";
-                    }
+
+                    let cat = cardBlog[i].getAttribute('data-category').split(', ');
+
+                    for (let n = 0; n < cat.length; n++) {
+                        if(target.getAttribute('data-category') === cat[n]) {
+                            cardBlog[i].style.display = "flex";
+                        } else if(target.getAttribute('data-category') === "All") {    
+                            cardBlog[i].style.display = "flex";
+                        }
+                    }                        
                 }
             }
         });
