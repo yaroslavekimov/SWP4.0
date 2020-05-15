@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="b4e71a31525fc526" />
     <meta name="google-site-verification" content="7VJEI4NRqJgvyauJuTwsFjsQYsnAkb6zKiLyfCcnIEU" />
-    <meta name="description" content="Самый простой preloader (прелодер) для сайта. Что бы скррыть страницу пока она загружается" />
-    <meta name="keywords" content="web-разработка, frontend, javascript, preloader, прелодер,как скрыть страницу, загрузка страницы, как сделать прелодер">
-    <title>Самый простой preloader для сайта</title>
+    <meta name="description" content="Создаем красивое анимированное меню для сайта на HTML и CSS" />
+    <meta name="keywords" content="меню html css, выпадающий список меню html, готовые меню html, раскрывающееся меню html, создание меню в html, навбар">
+    <title>Анимированное html, css меню для сайта</title>
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.min.css">
 </head>
@@ -44,8 +44,8 @@
     <div class="container">
         <div class="row">
             <div class="col-10 offset-1">
-                <h1 class="post__title">Самый простой preloader для сайта</h1>
-                <h2 class="post__subtitle">14.05.2020</h2>
+                <h1 class="post__title">Раскрывающееся меню на HTML и CSS</h1>
+                <h2 class="post__subtitle">15.05.2020</h2>
             </div>
         </div>
     </div>
@@ -54,90 +54,184 @@
 <div class="container">
     <main class="post__background">
         <article class="post__content">
-            <h2 class="post__subtitle">Как сделать прелоадер.</h2>
+            <h2 class="post__subtitle">Создаем красивое анимированное меню.</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Как правило прелодер нужен для того что бы скрыть страницу пока она загружается.
-                    Если на странице присутствует множество скриптов, картинок и так далее, то естественно увеличивается время ее загрузки и тут то на помощь приходит прелодер. Он скрывает весь процесс загрузки от пользователя, а как только она загрузится он покает ее во всей красе.
-                    Сделать его очень просто. 
+                    Вот такое простое и красивое меню получилось:
                 </p>
             </div>
             <div class="post__img">
-                <img src="../img/blog/preloader/preloader.png" alt="прелоадер для сайта">
+                <img src="../img/blog/animation-menu/animation-menu.png" alt="меню html css">
             </div>
             <h2 class="post__subtitle">HTML</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Добавим сам блок в верстку (обязательно в самое начало сразу после открытия body):
+                    Создаем список из четырех элементов:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="en"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;TEST Preloader&lt;/title&gt;
-            &lt;link rel="stylesheet" href="style.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            
-        &lt;div class="preloader"&gt;
-            &lt;div class="text"&gt;Загрузка ...&lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;script src="main.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
+        &lt;nav&gt;
+            &lt;ul class="menu"&gt;
+                &lt;li class="item"&gt;Один&lt;/li&gt;
+                &lt;li class="item"&gt;Два&lt;/li&gt;
+                &lt;li class="item"&gt;Три&lt;/li&gt;
+                &lt;li class="item"&gt;Четыре&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
                 </code>
             </pre>
             <h2 class="post__subtitle">CSS</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Немного стилей для красоты:
+                    Стилизуем:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
         * {
             position: relative;
+            box-sizing: border-box;
+            background-color: rebeccapurple;
         }
-        .preloader {
+        nav {
             position: fixed;
+            top: 2vw;
+            right: 12vh;
+            width: 60px;
+            height: 60px;
+        }
+        .menu {
+            position: absolute;
             top: 0px;
             left: 0px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            border: 5px solid yellow;
+            border-radius: 100%;
+        }
+        .menu::before {
+            content: 'Menu';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .item:nth-child(1) {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            z-index: 5;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            cursor: pointer;
+            border-radius: 100%;
+            background-color: yellowgreen;
+            z-index: -1;
+            transition: 1s all;
         }
-        .text {
-            text-align: center;
-            font-size: 100px;
-            color: chartreuse;
+        .item__active:nth-child(1) {
+            opacity: 1;
+            top: -10%;
+            left: -200%;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+            transition: 1s all 0s;
         }
-        .fade {
-            animation-name: fade;
-            animation-duration: 1s;
+        .item:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            cursor: pointer;
+            border-radius: 100%;
+            background-color: yellowgreen;
+            z-index: -1;
+            transition: 1s all;
         }
-        @keyframes fade {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0.1;
-            }
+        .item__active:nth-child(2) {
+            opacity: 1;
+            top: 80%;
+            left: -150%;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+            transition: 1s all 0.2s;
+        }
+        .item:nth-child(3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: absolute;
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%);
+            width: 80%;
+            height: 80%;
+            cursor: pointer;
+            border-radius: 100%;
+            background-color: yellowgreen;
+            z-index: -1;
+            transition: 1s all;
+        }
+        .item__active:nth-child(3) {
+            opacity: 1;
+            bottom: -150%;
+            right: 80%;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+            transition: 1s all 0.4s;
+        }
+        .item:nth-child(4) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: absolute;
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%);
+            width: 80%;
+            height: 80%;
+            cursor: pointer;
+            border-radius: 100%;
+            background-color: yellowgreen;
+            z-index: -1;
+            transition: 1s all;
+        }
+        .item__active:nth-child(4) {
+            opacity: 1;
+            bottom: -200%;
+            right: -10%;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+            transition: 1s all 0.6s;
         }
                 </code>
             </pre>
             <h2 class="post__subtitle">JavaScript</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Ну и сам скрипт:
+                    И небольшой скрипт:
                 </p>
             </div>
             <pre class="post__text-code">
@@ -146,38 +240,36 @@
 
             ' use strict ';
         
-            let preloader = document.querySelector('.preloader'); 
-            // Получаем прелодер
+            let menu = document.querySelector('.menu'),
+                menuItem = document.querySelectorAll('.item');
         
-                (function start() {
-                    preloader.classList.add('fade'); 
-                    // Вешаем на него анимацию. При помощи добавления класса. Для плавного скрытия.
+                menu.addEventListener('click', function() {
         
-                    setTimeout( // Прячем блок через 1 секунду 
-                        function preloaderDisplayNone() { 
-                            preloader.style.display = "none"; // Меняем стили
-                        }, 1000); //Задержка запуска в миллисекундах
-                }());
+                    for(let i =0; i &lt; menuItem.length; i++) {
+                        menuItem[i].classList.toggle('item__active');
+                    }
+                    
+                });
         });
                 </code>
             </pre>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Вот таким простым способом можно добавить прелоадер на сайт. Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
+                    Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
                 </p>
             </div>
             <div class="row">
                 <div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button">
-                    <div class="ya-share2" data-url="https://simplewebpage/blog/preloader.html" data-title="Как сделать прелоадер для сайта" data-image="https://simplewebpage.ru/img/blog/preloader/JS.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
+                    <div class="ya-share2" data-url="https://simplewebpage/blog/animation-menu.html" data-title="создание меню в html" data-image="https://simplewebpage.ru/img/blog/animation-menu/animation-menu.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-2 offset-md-1 col-sm-2 offset-sm-0 mt__button">
                     <div class="test__button">
-                        <a href="/blog/preloader-test/index.html">TEST</a>
+                        <a href="/blog/animation-menu/index.html">TEST</a>
                     </div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 offset-sm-2 mt__button">
                     <div class="test__button">
-                        <a href="/files/blog/preloader-test.7z">Скачать</a>
+                        <a href="/files/blog/animation-menu.7z">Скачать</a>
                     </div>
                 </div>
             </div>

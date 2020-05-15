@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="b4e71a31525fc526" />
     <meta name="google-site-verification" content="7VJEI4NRqJgvyauJuTwsFjsQYsnAkb6zKiLyfCcnIEU" />
-    <meta name="description" content="Самый простой preloader (прелодер) для сайта. Что бы скррыть страницу пока она загружается" />
-    <meta name="keywords" content="web-разработка, frontend, javascript, preloader, прелодер,как скрыть страницу, загрузка страницы, как сделать прелодер">
-    <title>Самый простой preloader для сайта</title>
+    <meta name="description" content="Эффект заполнения и увеличения кнопки на чистом CSS" />
+    <meta name="keywords" content="Наведение css, кнопка css, кнопка при наведении, наведение +на кнопку css, анимация кнопок при наведении, как сделать чтобы при наведении кнопка увеличивалась">
+    <title>Эффект заполнения и увеличения кнопки на чистом CSS</title>
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.min.css">
 </head>
@@ -44,8 +44,8 @@
     <div class="container">
         <div class="row">
             <div class="col-10 offset-1">
-                <h1 class="post__title">Самый простой preloader для сайта</h1>
-                <h2 class="post__subtitle">14.05.2020</h2>
+                <h1 class="post__title">Эффект заполнения и увеличения кнопки на чистом CSS</h1>
+                <h2 class="post__subtitle">15.05.2020</h2>
             </div>
         </div>
     </div>
@@ -54,130 +54,176 @@
 <div class="container">
     <main class="post__background">
         <article class="post__content">
-            <h2 class="post__subtitle">Как сделать прелоадер.</h2>
-            <div class="post__paragraph">
-                <p class="post__text">
-                    Как правило прелодер нужен для того что бы скрыть страницу пока она загружается.
-                    Если на странице присутствует множество скриптов, картинок и так далее, то естественно увеличивается время ее загрузки и тут то на помощь приходит прелодер. Он скрывает весь процесс загрузки от пользователя, а как только она загрузится он покает ее во всей красе.
-                    Сделать его очень просто. 
-                </p>
-            </div>
-            <div class="post__img">
-                <img src="../img/blog/preloader/preloader.png" alt="прелоадер для сайта">
+            <h2 class="post__subtitle">Эффект при наведении на кнопку css</h2>
+            <div class="col-8 offset-2 col-sm-4 offset-sm-4">
+                <div class="test__button">
+                    <a href="/blog/navedenie-na-knopku/index.html">Посмотреть</a>
+                </div>
             </div>
             <h2 class="post__subtitle">HTML</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Добавим сам блок в верстку (обязательно в самое начало сразу после открытия body):
+                    Код кнопок:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="en"&gt;
-        &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;title&gt;TEST Preloader&lt;/title&gt;
-            &lt;link rel="stylesheet" href="style.css"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            
-        &lt;div class="preloader"&gt;
-            &lt;div class="text"&gt;Загрузка ...&lt;/div&gt;
+        &lt;div class="btn_wrapper"&gt;
+            &lt;button class="btn_left"&gt;Hover Me.&lt;/button&gt;
+            &lt;button class="btn_bottom"&gt;Hover Me.&lt;/button&gt;
+            &lt;button class="btn_top"&gt;Hover Me.&lt;/button&gt;
+            &lt;button class="btn_right"&gt;Hover Me.&lt;/button&gt;
         &lt;/div&gt;
-
-        &lt;script src="main.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
                 </code>
             </pre>
             <h2 class="post__subtitle">CSS</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Немного стилей для красоты:
+                    Ну и сами стили:
                 </p>
             </div>
             <pre class="post__text-code">
                 <code>
         * {
             position: relative;
-        }
-        .preloader {
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             width: 100vw;
             height: 100vh;
-            background-color: black;
-            z-index: 5;
         }
-        .text {
-            text-align: center;
-            font-size: 100px;
-            color: chartreuse;
+        .btn_wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 100px;
+            border: 2px solid black;
         }
-        .fade {
-            animation-name: fade;
-            animation-duration: 1s;
+        
+        /* Стили для кнопки с нижним подчеркиванием  */
+        
+        .btn_bottom {
+            width: 120px;
+            height: 40px;
+            background-color: transparent;
+            outline: none;
+            border: none;
         }
-        @keyframes fade {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0.1;
-            }
+        .btn_bottom::before {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: orange;
+            transition: 0.2s all;
+            z-index: -1;
+        }
+        .btn_bottom:hover::before {
+            width: 140px;
+            height: 100%;
+        }
+        
+        /* Стили для кнопки с верхним подчеркиванием  */
+        
+        .btn_top {
+            width: 120px;
+            height: 40px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+        }
+        .btn_top::before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: orange;
+            transition: 0.2s all;
+            z-index: -1;
+        }
+        .btn_top:hover::before {
+            width: 140px;
+            height: 100%;
+        }
+        
+        /* Стили для кнопки с левым подчеркиванием  */
+        
+        .btn_left {
+            width: 120px;
+            height: 40px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+        }
+        .btn_left::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 40px;
+            background-color: orange;
+            transition: 0.5s all;
+            z-index: -1;
+        }
+        .btn_left:hover::before {
+            width: 120px;
+            height: 100%;
+        }
+        
+        /* Стили для кнопки с правым подчеркиванием  */
+        
+        .btn_right {
+            width: 120px;
+            height: 40px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+        }
+        .btn_right::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 40px;
+            background-color: orange;
+            transition: 0.5s all;
+            z-index: -1;
+        }
+        .btn_right:hover::before {
+            width: 120px;
+            height: 100%;
         }
                 </code>
             </pre>
-            <h2 class="post__subtitle">JavaScript</h2>
             <div class="post__paragraph">
                 <p class="post__text">
-                    Ну и сам скрипт:
-                </p>
-            </div>
-            <pre class="post__text-code">
-                <code>
-        window.addEventListener('DOMContentLoaded', function() {
-
-            ' use strict ';
-        
-            let preloader = document.querySelector('.preloader'); 
-            // Получаем прелодер
-        
-                (function start() {
-                    preloader.classList.add('fade'); 
-                    // Вешаем на него анимацию. При помощи добавления класса. Для плавного скрытия.
-        
-                    setTimeout( // Прячем блок через 1 секунду 
-                        function preloaderDisplayNone() { 
-                            preloader.style.display = "none"; // Меняем стили
-                        }, 1000); //Задержка запуска в миллисекундах
-                }());
-        });
-                </code>
-            </pre>
-            <div class="post__paragraph">
-                <p class="post__text">
-                    Вот таким простым способом можно добавить прелоадер на сайт. Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
+                    Исходники данного примера вы можете скачать ниже так же посмотреть пример работы нажав на соответствующие кнопки.
                 </p>
             </div>
             <div class="row">
                 <div class="col-12 col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-5 offset-sm-0 mt__button">
-                    <div class="ya-share2" data-url="https://simplewebpage/blog/preloader.html" data-title="Как сделать прелоадер для сайта" data-image="https://simplewebpage.ru/img/blog/preloader/JS.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
+                    <div class="ya-share2" data-url="https://simplewebpage/blog/navedenie-na-knopku.html" data-title="Эффект заполнения кнопки на CSS" data-image="https://simplewebpage.ru/img/blog/navedenie-na-knopku/navedenie-na-knopku.png" data-services="collections,vkontakte,facebook,twitter,viber,whatsapp"></div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-2 offset-md-1 col-sm-2 offset-sm-0 mt__button">
                     <div class="test__button">
-                        <a href="/blog/preloader-test/index.html">TEST</a>
+                        <a href="/blog/navedenie-na-knopku/index.html">TEST</a>
                     </div>
                 </div>
                 <div class="col-4 offset-4 col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-2 offset-md-2 col-sm-3 offset-sm-2 mt__button">
                     <div class="test__button">
-                        <a href="/files/blog/preloader-test.7z">Скачать</a>
+                        <a href="/files/blog/navedenie-na-knopku.7z">Скачать</a>
                     </div>
                 </div>
             </div>

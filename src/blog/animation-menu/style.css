@@ -48,7 +48,7 @@ nav {
     z-index: -1;
     transition: 1s all;
 }
-.menu:hover .item:nth-child(1) {
+.item__active:nth-child(1) {
     opacity: 1;
     top: -10%;
     left: -200%;
@@ -74,7 +74,7 @@ nav {
     z-index: -1;
     transition: 1s all;
 }
-.menu:hover .item:nth-child(2) {
+.item__active:nth-child(2) {
     opacity: 1;
     top: 80%;
     left: -150%;
@@ -100,7 +100,7 @@ nav {
     z-index: -1;
     transition: 1s all;
 }
-.menu:hover .item:nth-child(3) {
+.item__active:nth-child(3) {
     opacity: 1;
     bottom: -150%;
     right: 80%;
@@ -126,7 +126,7 @@ nav {
     z-index: -1;
     transition: 1s all;
 }
-.menu:hover .item:nth-child(4) {
+.item__active:nth-child(4) {
     opacity: 1;
     bottom: -200%;
     right: -10%;
