@@ -8,6 +8,11 @@
 * {
     position: relative;
     font-family: 'Roboto';
+    color: #ffffff;
+
+    a {
+        color: #ffffff;
+    }
 }
 	
 @import 'blocks/_back-fix';

@@ -26,27 +26,6 @@
         width: 100%;
         text-align: center;
     }
-    &_white {
-        background-color: $section-color-white;
-        &:before {
-            content: '';
-            width: 100%;
-            height: 7%;
-            position: absolute;
-            top: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
-        }
-        &::after {
-            content: '';
-            width: 100%;
-            height: 7%;
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
-        }
-    }
     &__description {
         margin-top: 15px;
         text-align: center;

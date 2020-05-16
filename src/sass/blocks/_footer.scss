@@ -16,20 +16,7 @@
         left: 0;
         background: linear-gradient(2deg,$section-color-black 49%,$section-color-black-before 50%);
     }
-    &_white {
-        background-color: $section-color-white;
-        &:before {
-            content: '';
-            width: 100%;
-            height: 51%;
-            position: absolute;
-            top: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
-        }
-    }
     .privacy-policy a {
-        text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
         &:hover {
             text-decoration: none;
         }

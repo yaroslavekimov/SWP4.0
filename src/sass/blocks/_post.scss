@@ -1,5 +1,5 @@
 .post {
-    min-height: 200px;
+    height: 300px;
     margin-top: 150px;
     padding: 60px;
     background-color: $section-color-black;
@@ -7,7 +7,7 @@
     &::before {
         content: '';
         width: 100%;
-        height: 26%;
+        height: 18%;
         position: absolute;
         top: -50px;
         left: 0;
@@ -16,7 +16,7 @@
     &::after {
         content: '';
         width: 100%;
-        height: 26%;
+        height: 18%;
         position: absolute;
         bottom: -50px;
         left: 0;
@@ -27,52 +27,30 @@
         font-size: 40px;
         color: $main-color;
         text-align: center;
-        text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
-    }
-    &_white {
-        background-color: $section-color-white;
-        &:before {
-            content: '';
-            width: 100%;
-            height: 26%;
-            position: absolute;
-            top: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
-        }
-        &::after {
-            content: '';
-            width: 100%;
-            height: 26%;
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
-        }
     }
     &__background {
         padding: 50px 20px;
         width: 100%;
         min-height: 400px;
-        background-color: rgba( 0, 0, 0, 0.8);
-        &_white {
-            background-color: rgba( 255, 255, 255, 0.8);
-        }
+        background-color: rgba( 255, 255, 255, 0.8);
     }
     &__subtitle {
-        margin: 10px 0px;;
+        margin: 30px 0px;;
         text-align: center;
+        color: #000000;
         font-size: 20px;
     }
     &__text {
         margin: 30px 80px;
         font-size: 20px;
+        color: #000000;
         text-align: justify;
         text-indent: 60px;
     }
     &__text-center {
         margin-top: 20px;
         font-size: 20px;
+        color: #000000;
         text-align: center;
     }
     &__text-code {
@@ -99,14 +77,17 @@
             height: 100%;
         }
     }
+    &__paragraph li {
+        color: #000000;
+    }
 }
 .test__button {
     text-align: center;
     width: 100%;
     height: 100%;
-    border: 2px solid $main-color;
+    border: 1px solid $main-color;
     border-radius: 5px;
-    color: $main-color;
+    color: #000000;
     &:hover {
         background-color: $main-color;
     }
@@ -114,6 +95,7 @@
         display: block;
         width: 100%;
         height: 100%;
+        color: #000000;
         &:hover {
             text-decoration: none;
         }

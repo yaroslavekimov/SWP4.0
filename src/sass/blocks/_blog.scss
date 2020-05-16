@@ -29,27 +29,6 @@
         text-align: center;
         text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
     }
-    &_white {
-        background-color: $section-color-white;
-        &:before {
-            content: '';
-            width: 100%;
-            height: 23%;
-            position: absolute;
-            top: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white 49%,$section-color-white-before 50%);
-        }
-        &::after {
-            content: '';
-            width: 100%;
-            height: 23%;
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            background: linear-gradient(2deg,$section-color-white-before 49%,$section-color-white 50%);
-        }
-    }
     &__main {
         min-height: 600px;
         padding: 100px 0;
@@ -73,11 +52,6 @@
     background-color: $section-color-black;
     &:hover {
         border: 1px solid $main-color;
-    }
-    &_white {
-        margin: 15px;
-        border-radius: 5px;
-        background-color: $section-color-white;
     }
     &-title {
         text-align: center;
@@ -109,7 +83,7 @@
     }
     &__nav {
         position: absolute;
-        top: -8px;
+        top: 15px;
         right: 0px;
         transform: translateY(0);
         width: 100%;

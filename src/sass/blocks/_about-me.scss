@@ -20,20 +20,22 @@
         padding: 10px;
         border: 2px solid #000000;
         border-radius: 100%;
-        box-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;;
     }
     &__for-me {
         margin-top: 20px;
         text-align: center;
         font-size: 25px;
+        color: #000000;
     }
     &__list {
         list-style-type: none;
         padding: 0;
+        color: #000000;
     }
     &__item {
         margin-top: 10px;
         text-align: center;
+        color: #000000;
     }
     &__link {
         margin-top: 20px;
@@ -45,7 +47,7 @@
         height: 100%;
         border: 2px solid $main-color;
         border-radius: 5px;
-        color: $main-color;
+        color: #000000;
         text-shadow: 2px 2px 50px #000000, -2px -2px 50px #000000;
         transition: 1s all;
         &:hover {

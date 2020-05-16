@@ -5,8 +5,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     ' use strict ';
 
-    let onOffMod = require('./on-off.js'),
-        skillsMod = require('./skills.js'),
+    let skillsMod = require('./skills.js'),
         scrollMod = require('./scroll.js'),
         preloaderMod = require('./preloader.js'),
         cardBlockMod = require('./card-block.js'),
@@ -15,7 +14,6 @@ window.addEventListener('DOMContentLoaded', function() {
         menuMod = require('./menu.js');
 
 
-    onOffMod();
     skillsMod();
     scrollMod();
     preloaderMod();
