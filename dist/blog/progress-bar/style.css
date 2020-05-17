@@ -1,0 +1,130 @@
+* {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.radial {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    overflow: hidden;
+}
+.radial-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.radial-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: greenyellow;
+    box-shadow: inset 2px 2px 20px #000000;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+}
+.radial-right {
+    right: 0px;
+}
+.radial-left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100px;
+    background-color: blue;
+}
+.radial-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: rotate(0deg);
+}
+span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100px;
+    background-color: blue;
+}
+.total {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 35%;
+    color: blue;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+}
+.rotate-left {
+    animation-name: rotate-left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+}
+@keyframes rotate-left {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(300deg);
+    }
+}
+.rotate-right {
+    animation-name: rotate-right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes rotate-right {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+.show {
+    animation-name: show;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes show {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
