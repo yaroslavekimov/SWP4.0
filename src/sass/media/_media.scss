@@ -36,10 +36,11 @@
     }
     .card {
         &__nav {
-            right: 45px;
+            width: 240px;
+            right: 5%;
             &_fix {
                 width: 240px;
-                right: 60px;
+                right: 5%;
             }
         }
     }
@@ -92,6 +93,7 @@
             position: fixed;
             display: none;
             width: 30%;
+            top: 2%;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -123,6 +125,8 @@
         margin-top: 30px;
     }
     .post {
+        height: 230px;
+        padding: 60px 20px;
         &__title {
             font-size: 30px;
         }
@@ -143,6 +147,12 @@
         }
         &__text-spaces {
             margin: 0;
+        }
+        &::before {
+            height: 23%;
+        }
+        &::after {
+            height: 23%;
         }
     }
 }
@@ -372,14 +382,14 @@
         align-items: center;
     }
     .card__nav {
-        top: 60%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
     }
     .post {
         &__title {
-            font-size: 20px;
+            font-size: 17px;
         }
         &__subtitle {
             text-align: center;
